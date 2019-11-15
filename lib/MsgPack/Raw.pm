@@ -1,0 +1,39 @@
+package MsgPack::Raw;
+
+use strict;
+use warnings;
+
+require XSLoader;
+XSLoader::load ('MsgPack::Raw', $MsgPack::Raw::VERSION);
+
+use MsgPack::Raw::Bool;
+use MsgPack::Raw::Ext;
+use MsgPack::Raw::Packer;
+use MsgPack::Raw::Unpacker;
+
+=head1 NAME
+
+MsgPack::Raw - Perl bindings to the msgpack C library
+
+=head1 SYNOPSIS
+
+	use MsgPack::Raw;
+
+=head1 AUTHOR
+
+Jacques Germishuys <jacquesg@striata.com>
+
+=head1 LICENSE AND COPYRIGHT
+
+Copyright 2019 Jacques Germishuys.
+
+This program is free software; you can redistribute it and/or modify it
+under the terms of either: the GNU General Public License as published
+by the Free Software Foundation; or the Artistic License.
+
+See http://dev.perl.org/licenses/ for more information.
+
+=cut
+
+1; # End of MsgPack::Raw
+
