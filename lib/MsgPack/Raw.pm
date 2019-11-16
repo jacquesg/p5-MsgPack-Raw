@@ -31,6 +31,14 @@ MsgPack::Raw - Perl bindings to the msgpack C library
 
 	use MsgPack::Raw;
 
+	my $packer = MsgPack::Raw::Packer->new;
+	my $packed = $packer->pack ({ a => 'b', c => 'd' });
+
+	my $unpacker = MsgPack::Raw::Unpacker->new;
+	$unpacker->feed ($packed);
+
+	my $unpacked = $unpacker->next();
+
 =head1 AUTHOR
 
 Jacques Germishuys <jacquesg@striata.com>

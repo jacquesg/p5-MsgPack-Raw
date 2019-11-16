@@ -16,6 +16,11 @@ MessagePack Unpacker
 
 	use MsgPack::Raw;
 
+	my $unpacker = MsgPack::Raw::Unpacker->new;
+	$unpacker->feed ($packed);
+
+	my $unpacked = $unpacker->next();
+
 =head1 METHODS
 
 =head2 new( )
