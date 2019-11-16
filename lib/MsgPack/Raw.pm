@@ -11,6 +11,12 @@ use MsgPack::Raw::Ext;
 use MsgPack::Raw::Packer;
 use MsgPack::Raw::Unpacker;
 
+=for HTML
+<a href="https://dev.azure.com/jacquesgermishuys/p5-MsgPack-Raw">
+	<img src="https://dev.azure.com/jacquesgermishuys/p5-MsgPack-Raw/_apis/build/status/jacquesg.p5-MsgPack-Raw?branchName=master" alt="Build Status: Azure" align="right" />
+</a>
+=cut
+
 =head1 NAME
 
 MsgPack::Raw - Perl bindings to the msgpack C library
