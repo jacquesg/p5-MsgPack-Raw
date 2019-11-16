@@ -159,10 +159,10 @@ STATIC void encode_msgpack (msgpack_raw_packer *packer, SV *sv)
 		else if (SvTYPE (SvRV (sv)) == SVt_PVAV)
 		{
 			AV *list = MUTABLE_AV (SvRV (sv));
-			STRLEN size = av_len (list)+1;
+			STRLEN i, size = av_len (list)+1;
 
 			msgpack_pack_array (&packer->packer, size);
-			for (STRLEN i = 0; i < size; ++i)
+			for (i = 0; i < size; ++i)
 			{
 				SV **value = av_fetch (list, i, 0);
 				if (value && *value)
