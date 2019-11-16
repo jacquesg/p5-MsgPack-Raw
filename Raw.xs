@@ -78,24 +78,7 @@ STATIC int msgpack_raw_packer_write(void *data, const char *buf, size_t len)
 
 STATIC void encode_msgpack (msgpack_raw_packer *packer, SV *sv)
 {
-	if (SvPOKp (sv))
-	{
-		if (SvUTF8 (sv))
-		{
-			msgpack_pack_str (&packer->packer, SvCUR (sv));
-			msgpack_pack_str_body (&packer->packer, SvPVX_const (sv), SvCUR (sv));
-		}
-		else
-		{
-			msgpack_pack_bin (&packer->packer, SvCUR (sv));
-			msgpack_pack_bin_body (&packer->packer, SvPVX_const (sv), SvCUR (sv));
-		}
-	}
-	else if (SvNOKp (sv))
-	{
-		msgpack_pack_double (&packer->packer, (double)SvNVX (sv));
-	}
-	else if (SvIOKp (sv))
+	if (SvIOKp (sv))
 	{
 		if (SvUOK (sv))
 		{
@@ -117,6 +100,23 @@ STATIC void encode_msgpack (msgpack_raw_packer *packer, SV *sv)
 			msgpack_pack_int16 (&packer->packer, SvIVX (sv));
 			#endif
 		}
+	}
+	else if (SvPOKp (sv))
+	{
+		if (SvUTF8 (sv))
+		{
+			msgpack_pack_str (&packer->packer, SvCUR (sv));
+			msgpack_pack_str_body (&packer->packer, SvPVX_const (sv), SvCUR (sv));
+		}
+		else
+		{
+			msgpack_pack_bin (&packer->packer, SvCUR (sv));
+			msgpack_pack_bin_body (&packer->packer, SvPVX_const (sv), SvCUR (sv));
+		}
+	}
+	else if (SvNOKp (sv))
+	{
+		msgpack_pack_double (&packer->packer, (double)SvNVX (sv));
 	}
 	else if (SvROK (sv))
 	{

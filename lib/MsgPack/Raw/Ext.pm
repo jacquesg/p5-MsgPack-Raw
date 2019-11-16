@@ -4,7 +4,6 @@ use strict;
 use warnings;
 use overload
     '==' => sub { $_[0]->{type} == $_[1]->{type} && $_[0]->{data} eq $_[1]->{data} },
-    'eq' => sub { $_[0]->{type} == $_[1]->{type} && $_[0]->{data} eq $_[1]->{data} },
     fallback => 1 ;
 use MsgPack::Raw;
 

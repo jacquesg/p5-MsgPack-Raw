@@ -19,11 +19,4 @@ ok $obj2 != $obj3;
 ok $obj2 != $obj4;
 ok $obj3 != $obj4;
 
-isnt $obj1, $obj2;
-isnt $obj1, $obj3;
-is $obj1, $obj4;
-isnt $obj2, $obj3;
-isnt $obj2, $obj4;
-isnt $obj3, $obj4;
-
 done_testing;
