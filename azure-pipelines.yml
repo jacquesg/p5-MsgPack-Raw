@@ -87,8 +87,10 @@ steps:
     export RELEASE_TESTING=1
     export NETWORK_TESTING=1
     export AUTOMATED_TESTING=1
+    export AUTHOR_TESTING=1
     echo "##vso[task.setvariable variable=RELEASE_TESTING]$RELEASE_TESTING"
     echo "##vso[task.setvariable variable=NETWORK_TESTING]$NETWORK_TESTING"
     echo "##vso[task.setvariable variable=AUTOMATED_TESTING]$AUTOMATED_TESTING"
+    echo "##vso[task.setvariable variable=AUTHOR_TESTING]$AUTHOR_TESTING"
     dzil cover -ignore_re ^deps -ignore_re CORE -ignore_re ^const -test -report coveralls
   displayName: 'Build/Test'

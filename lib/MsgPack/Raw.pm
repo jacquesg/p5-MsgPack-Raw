@@ -39,6 +39,23 @@ MsgPack::Raw - Perl bindings to the msgpack C library
 
 	my $unpacked = $unpacker->next();
 
+=head1 ABOUT MESSAGEPACK
+
+L<MessagePack|https://msgpack.org> is an efficient binary serialization format. It lets you exchange
+data among multiple languages like JSON, but it's faster and smaller. Small
+integers are encoded into a single byte, and typical short strings require only
+one extra byte in addition to the strings themselves.
+
+=head1 DOCUMENTATION
+
+=head2 L<MsgPack::Raw::Packer>
+
+=head2 L<MsgPack::Raw::Unpacker>
+
+=head2 L<MsgPack::Raw::Ext>
+
+=head2 L<MsgPack::Raw::Bool>
+
 =head1 AUTHOR
 
 Jacques Germishuys <jacquesg@striata.com>
