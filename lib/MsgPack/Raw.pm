@@ -15,6 +15,9 @@ use MsgPack::Raw::Unpacker;
 <a href="https://dev.azure.com/jacquesgermishuys/p5-MsgPack-Raw">
 	<img src="https://dev.azure.com/jacquesgermishuys/p5-MsgPack-Raw/_apis/build/status/jacquesg.p5-MsgPack-Raw?branchName=master" alt="Build Status: Azure" align="right" />
 </a>
+<a href="https://coveralls.io/github/jacquesg/p5-MsgPack-Raw">
+	<img src="https://coveralls.io/repos/github/jacquesg/p5-MsgPack-Raw/badge.svg?branch=master" alt="Coverage Status" align="right"/>
+</a>
 =cut
 
 =head1 NAME
