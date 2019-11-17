@@ -32,3 +32,9 @@ deps/msgpack-c/msgpack_vc8.vcproj
 deps/msgpack-c/preprocess
 deps/msgpack-c/test
 deps/msgpack-c/update_version.sh
+deps/msgpack-c/include/msgpack/adaptor
+deps/msgpack-c/include/msgpack/preprocessor
+deps/msgpack-c/include/msgpack/v1
+deps/msgpack-c/include/msgpack/v2
+deps/msgpack-c/include/msgpack/v3
+deps/msgpack-c/include/msgpack.*hpp$
