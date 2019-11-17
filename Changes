@@ -2,4 +2,7 @@ Revision history for MsgPack-Raw
 
 {{$NEXT}}
 
+ - Compilation fixes: Don't require a C++ linker
+ - Removed unneeded files from the distribution
+
 0.01      2019-11-17 13:39:33+00:00 Europe/London
