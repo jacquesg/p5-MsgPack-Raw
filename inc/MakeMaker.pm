@@ -27,40 +27,12 @@ my $is_bsd = ($^O =~ /bsd/i) ? 1 : 0;
 my $is_openbsd = ($^O =~ /openbsd/i) ? 1 : 0;
 my $is_gkfreebsd = ($^O =~ /gnukfreebsd/i) ? 1 : 0;
 
-my $def = ' -DXYZ';
+my $def = '';
 
 my $lib = '';
 my $otherldflags = '';
 my $inc = '';
 my $ccflags = '';
-my $ld = $Config{ld};
-
-if ($is_gcc)
-{
-	if ($ld eq 'cc')
-	{
-		$ld = 'c++';
-	}
-	elsif ($ld eq 'clang')
-	{
-		$ld = 'clang++';
-	}
-	elsif ($ld =~ /gcc/)
-	{
-		$ld =~ s/gcc/g++/;
-	}
-
-	if (!$is_windows)
-	{
-		$ccflags .= ' -pthread';
-	}
-	$lib .= ' -lpthread';
-
-	if ($is_linux || $is_solaris)
-	{
-		$lib .= ' -lrt';
-	}
-}
 
 if ($is_windows)
 {
@@ -114,7 +86,6 @@ my {{ $WriteMakefileArgs }}
 $WriteMakefileArgs{DEFINE}  .= $def;
 $WriteMakefileArgs{LIBS}    .= $lib;
 $WriteMakefileArgs{INC}     .= $inc;
-$WriteMakefileArgs{LD}      .= $ld;
 $WriteMakefileArgs{CCFLAGS} .= $Config{ccflags} . ' '. $ccflags;
 $WriteMakefileArgs{OBJECT}  .= ' ' . join ' ', (@c_objs);
 $WriteMakefileArgs{dynamic_lib} = {
