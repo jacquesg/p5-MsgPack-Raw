@@ -39,7 +39,7 @@ MessagePack Ext class
 
 =head2 new( $type, $data)
 
-TODO
+Create a new ext type.
 
 =head1 AUTHOR
 
