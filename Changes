@@ -2,6 +2,8 @@ Revision history for MsgPack-Raw
 
 {{$NEXT}}
 
+0.05      2019-11-23 09:37:55+00:00 Europe/London
+
  - Fix floating-point test
 
 0.04      2019-11-21 17:21:50+00:00 Europe/London
